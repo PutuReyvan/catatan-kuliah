@@ -1,14 +1,14 @@
 ---
 matkul: Blockchain
-minggu: 6
+minggu: 7
 sks: 2
 sumber: Hardhat Framework for Smart Contract.pptx
-tags: [kuliah/blockchain, minggu/w06]
+tags: [kuliah/blockchain, minggu/w07]
 status: draft
 diproses: 2026-09-03
 ---
 
-# W06 — The Hardhat Framework
+# W07 — The Hardhat Framework
 
 ## Ringkasan
 > - **Hardhat** = development environment untuk Ethereum: edit, compile, debug, deploy smart contract dan dApp dalam satu tempat.
@@ -186,7 +186,7 @@ Setelah menemukan kerentanan itu, yang langsung dilakukan hacker adalah **mencar
 `https://etherscan.io/tx/0xeef10fc5170f669b86c4cd0444882a96087221325f8bf2f55d6188633aa7be7c`
 
 > [!info] Konteks tambahan (bukan dari slide)
-> Analogi bugnya: bayangin brankas apartemen yang tombol **"daftarkan pemilik baru"**-nya ada di luar, di lorong, tanpa kunci. Selama gak ada yang mencet, semua aman. Begitu satu orang sadar tombol itu ada dan bisa dipencet siapa saja — dia daftarkan namanya sebagai pemilik, lalu buka brankasnya secara sah. Kodenya jalan **persis seperti yang ditulis**; yang salah adalah yang ditulis. Ini persis peringatan di [[W07 - Smart Contract Pitfalls]]: *"a smart contract will execute exactly what is written, which is not always what the programmer intended."*
+> Analogi bugnya: bayangin brankas apartemen yang tombol **"daftarkan pemilik baru"**-nya ada di luar, di lorong, tanpa kunci. Selama gak ada yang mencet, semua aman. Begitu satu orang sadar tombol itu ada dan bisa dipencet siapa saja — dia daftarkan namanya sebagai pemilik, lalu buka brankasnya secara sah. Kodenya jalan **persis seperti yang ditulis**; yang salah adalah yang ditulis. Ini persis peringatan di [[W08 - Smart Contract Pitfalls]]: *"a smart contract will execute exactly what is written, which is not always what the programmer intended."*
 
 **Tugasnya:** pakai Hardhat untuk **merekonstruksi hack tersebut**. Caranya dengan **fork mainnet Ethereum** dan berinteraksi dengan wallet dan alamat di sana. Fitur Hardhat yang dipakai:
 
@@ -197,31 +197,31 @@ Setelah menemukan kerentanan itu, yang langsung dilakukan hacker adalah **mencar
 
 ## Diagram & Visual
 - **Slide 2 — logo/identitas Hardhat**
-  ![[99-Assets/Blockchain/W06-slide02.png]]
+  ![[99-Assets/Blockchain/W07-slide02.png]]
 - **Slide 5 — diagram struktur direktori proyek Hardhat**
-  ![[99-Assets/Blockchain/W06-slide05.png]]
+  ![[99-Assets/Blockchain/W07-slide05.png]]
 - **Slide 8 — output terminal `npx hardhat` (menu pilihan setup)**
-  ![[99-Assets/Blockchain/W06-slide08.jpg]]
+  ![[99-Assets/Blockchain/W07-slide08.jpg]]
 - **Slide 10 — isi `hardhat.config.js` awal (require plugin + versi compiler 0.8.8)**
-  ![[99-Assets/Blockchain/W06-slide10.jpg]]
+  ![[99-Assets/Blockchain/W07-slide10.jpg]]
 - **Slide 11 — struktur direktori setelah `Token.sol` dibuat**
-  ![[99-Assets/Blockchain/W06-slide11.jpg]]
+  ![[99-Assets/Blockchain/W07-slide11.jpg]]
 - **Slide 12 — struktur direktori setelah folder `test` dan `token.js` dibuat**
-  ![[99-Assets/Blockchain/W06-slide12.jpg]]
+  ![[99-Assets/Blockchain/W07-slide12.jpg]]
 - **Slide 13 — output `npx hardhat test` dengan semua test case lolos**
-  ![[99-Assets/Blockchain/W06-slide13.jpg]]
+  ![[99-Assets/Blockchain/W07-slide13.jpg]]
 - **Slide 14 — isi file `.env`**
-  ![[99-Assets/Blockchain/W06-slide14.png]]
+  ![[99-Assets/Blockchain/W07-slide14.png]]
 - **Slide 15 — `hardhat.config.js` setelah ditambah bagian `networks`**
-  ![[99-Assets/Blockchain/W06-slide15.png]]
+  ![[99-Assets/Blockchain/W07-slide15.png]]
 - **Slide 18 — proses `npx hardhat compile`**
-  ![[99-Assets/Blockchain/W06-slide18.jpg]]
+  ![[99-Assets/Blockchain/W07-slide18.jpg]]
 - **Slide 21 — tampilan Etherscan menunjukkan contract yang belum terverifikasi (cuma bytecode)**
-  ![[99-Assets/Blockchain/W06-slide21.jpg]]
+  ![[99-Assets/Blockchain/W07-slide21.jpg]]
 - **Slide 22 — `hardhat.config.js` dengan konfigurasi hardhat-etherscan**
-  ![[99-Assets/Blockchain/W06-slide22.png]]
+  ![[99-Assets/Blockchain/W07-slide22.png]]
 - **Slide 23 — tampilan Etherscan setelah source code terverifikasi**
-  ![[99-Assets/Blockchain/W06-slide23.png]]
+  ![[99-Assets/Blockchain/W07-slide23.png]]
 
 > [!warning] Deck ini **paling banyak gambarnya** (13 gambar non-dekoratif dari 29 slide), dan hampir semuanya screenshot terminal, isi file config, atau struktur direktori. Isi file `hardhat.config.js` dan `.env` **gak bisa di-copy dari note ini** — harus dibaca dari gambar. Slide 26 (kode `initWallet` yang tidak terproteksi) juga tidak terekstrak sebagai gambar terpisah.
 
@@ -257,8 +257,8 @@ artifacts/contracts/Token.sol/Token.json
 
 ## Pertanyaan Terbuka
 - **Rinkeby, Ropsten, dan Infura setup di slide ini sudah usang.** Rinkeby dan Ropsten sudah dimatikan sejak 2022–2023; testnet yang aktif sekarang Sepolia dan Holesky. Perlu ditanya ke dosen testnet mana yang dipakai di praktikum, karena semua perintah `--network rinkeby` di slide gak akan jalan.
-- Compiler yang ditentukan slide adalah **0.8.8**, sementara [[W04 - Solidity Development]] menyebut `SELFDESTRUCT` deprecated sejak **0.8.18**. Perlu dipastikan versi mana yang dipakai di kelas.
-- Slide 24 nyebut arsitektur proxy dan **`delegatecall`** sebagai inti Parity hack, tapi `delegatecall` gak pernah dijelaskan mekanismenya, baik di sini maupun di [[W04 - Solidity Development]]. Ini lubang materi yang cukup besar untuk memahami hack-nya.
+- Compiler yang ditentukan slide adalah **0.8.8**, sementara [[W05 - Solidity Development]] menyebut `SELFDESTRUCT` deprecated sejak **0.8.18**. Perlu dipastikan versi mana yang dipakai di kelas.
+- Slide 24 nyebut arsitektur proxy dan **`delegatecall`** sebagai inti Parity hack, tapi `delegatecall` gak pernah dijelaskan mekanismenya, baik di sini maupun di [[W05 - Solidity Development]]. Ini lubang materi yang cukup besar untuk memahami hack-nya.
 - `deployments/` sebagai nama folder itu konvensi slide ini; dokumentasi Hardhat resmi biasanya pakai `scripts/`. Perlu dipastikan mana yang dinilai.
 - Hands-on Parity butuh akun Alchemy berbayar/terdaftar. Perlu ditanya apakah disediakan kampus.
 
@@ -267,7 +267,7 @@ artifacts/contracts/Token.sol/Token.json
 
 ## Terkait
 - [[_Blockchain]]
-- [[W05 - Smart Contract Standard]]
-- [[W07 - Smart Contract Pitfalls]]
-- [[W04 - Solidity Development]]
+- [[W06 - Smart Contract Standard]]
+- [[W08 - Smart Contract Pitfalls]]
+- [[W05 - Solidity Development]]
 - [[Blockchain - Review dan Glosari]]

@@ -1,14 +1,14 @@
 ---
 matkul: Blockchain
-minggu: 4
+minggu: 5
 sks: 2
 sumber: Smart Contract and Solidity.pptx
-tags: [kuliah/blockchain, minggu/w04]
+tags: [kuliah/blockchain, minggu/w05]
 status: draft
 diproses: 2026-09-03
 ---
 
-# W04 — Solidity Development
+# W05 — Solidity Development
 
 > [!note] Slide 2 nyatakan deck ini dibawakan dalam **dua sesi terpisah (S05 dan S07)**, dan dosen mengatur sendiri proporsinya. Jadi materi di note ini kemungkinan dibagi jadi dua pertemuan di kelas.
 
@@ -91,7 +91,7 @@ Variabel yang selalu tersedia di dalam contract:
 | `tx.gasprice` | uint | Gas price (dalam Wei) untuk transaksi saat ini |
 
 > [!info] Konteks tambahan (bukan dari slide)
-> Ingat-ingat: `block.difficulty`, `block.timestamp`, dan `block.number` di tabel ini **kelihatan seperti sumber keacakan yang bagus**. Bukan. Ketiganya bisa dilihat dan sebagian bisa dipengaruhi miner. Itu persis jebakan **insecure randomness** yang dibahas di [[W07 - Smart Contract Pitfalls]].
+> Ingat-ingat: `block.difficulty`, `block.timestamp`, dan `block.number` di tabel ini **kelihatan seperti sumber keacakan yang bagus**. Bukan. Ketiganya bisa dilihat dan sebagian bisa dipengaruhi miner. Itu persis jebakan **insecure randomness** yang dibahas di [[W08 - Smart Contract Pitfalls]].
 
 ### Contract, interface, dan library
 Tipe data utama Solidity adalah **`contract`**. Mirip objek di bahasa berorientasi objek, contract adalah kontainer yang berisi data dan method. Selain `contract`, Solidity punya dua tipe objek lain:
@@ -196,27 +196,27 @@ Tiga cara memanggil contract lain, diurutkan dari yang paling aman:
 
 ## Diagram & Visual
 - **Slide 12 — contoh deklarasi function di Solidity**
-  ![[99-Assets/Blockchain/W04-slide12.png]]
+  ![[99-Assets/Blockchain/W05-slide12.png]]
 - **Slide 16 — contoh kode constructor**
-  ![[99-Assets/Blockchain/W04-slide16.png]]
+  ![[99-Assets/Blockchain/W05-slide16.png]]
 - **Slide 17 — contoh kode `selfdestruct`**
-  ![[99-Assets/Blockchain/W04-slide17.png]]
+  ![[99-Assets/Blockchain/W05-slide17.png]]
 - **Slide 19 — contoh modifier `onlyOwner` dan pemakaiannya**
-  ![[99-Assets/Blockchain/W04-slide19.png]]
-  ![[99-Assets/Blockchain/W04-slide19b.png]]
+  ![[99-Assets/Blockchain/W05-slide19.png]]
+  ![[99-Assets/Blockchain/W05-slide19b.png]]
 - **Slide 20 — sintaks inheritance tunggal dan multiple inheritance**
-  ![[99-Assets/Blockchain/W04-slide20.png]]
-  ![[99-Assets/Blockchain/W04-slide20b.png]]
+  ![[99-Assets/Blockchain/W05-slide20.png]]
+  ![[99-Assets/Blockchain/W05-slide20b.png]]
 - **Slide 23 — contoh deklarasi event dengan keyword `indexed`**
-  ![[99-Assets/Blockchain/W04-slide23.png]]
+  ![[99-Assets/Blockchain/W05-slide23.png]]
 - **Slide 24 — contoh pemakaian `emit`**
-  ![[99-Assets/Blockchain/W04-slide24.png]]
+  ![[99-Assets/Blockchain/W05-slide24.png]]
 - **Slide 26 — kode membuat instance contract baru**
-  ![[99-Assets/Blockchain/W04-slide26.png]]
+  ![[99-Assets/Blockchain/W05-slide26.png]]
 - **Slide 27 — kode mengalamati instance contract yang sudah ada**
-  ![[99-Assets/Blockchain/W04-slide27.png]]
+  ![[99-Assets/Blockchain/W05-slide27.png]]
 - **Slide 28 — kode raw call**
-  ![[99-Assets/Blockchain/W04-slide28.png]]
+  ![[99-Assets/Blockchain/W05-slide28.png]]
 
 > [!warning] **Hampir semua contoh kode di deck ini berupa gambar, bukan teks.** Artinya kode di slide 12, 16, 17, 19, 20, 23, 24, 26, 27, dan 28 gak bisa di-copy dari note ini — harus dilihat dari gambar di atas atau dari PPT aslinya. Slide 3 juga kosong total (gak ada teks maupun gambar yang bisa diekstrak).
 
@@ -240,9 +240,9 @@ Alamat khusus deploy contract:
 ```
 
 ## Pertanyaan Terbuka
-- Slide 13 nyebut fallback dan receive function "see previous session", tapi **gak ada deck di matkul ini yang membahasnya**. Kemungkinan ada materi sesi yang belum masuk, atau dijelaskan lisan di kelas. Perlu ditanyakan — fallback function itu jantung dari reentrancy attack di [[W07 - Smart Contract Pitfalls]].
+- ~~Slide 13 nyebut fallback dan receive function "see previous session" tapi gak ada deck yang membahasnya.~~ **Terjawab:** deck yang dimaksud adalah [[W03 - Ethereum Basics]], slide 20–21 — di situ `receive()`, `fallback()`, dan modifier `payable` dijelaskan lengkap. Baca itu sebelum masuk reentrancy di [[W08 - Smart Contract Pitfalls]].
 - `revert` disebut sebagai salah satu dari empat fungsi error handling, tapi **cuma `assert` dan `require` yang dijelaskan**. Bedanya `revert` dengan `require` gak dibahas.
-- `delegatecall` disebut dua kali (di library dan di raw call) tapi gak pernah dijelaskan bedanya dengan `call` biasa. Padahal ini yang dieksploitasi di Parity hack yang muncul di [[W06 - The Hardhat Framework]].
+- `delegatecall` disebut dua kali (di library dan di raw call) tapi gak pernah dijelaskan bedanya dengan `call` biasa. Padahal ini yang dieksploitasi di Parity hack yang muncul di [[W07 - The Hardhat Framework]].
 - Tipe `fixed`/`ufixed` disebut di tabel tipe data, padahal di Solidity versi sekarang tipe ini belum didukung penuh. Perlu diverifikasi versi Solidity yang dipakai di praktikum.
 - `SELFDESTRUCT` sudah deprecated sejak 0.8.18 (diakui slide sendiri). Perlu dikonfirmasi apakah ini masih diujikan.
 
@@ -251,7 +251,7 @@ Alamat khusus deploy contract:
 
 ## Terkait
 - [[_Blockchain]]
-- [[W03 - Wallets and Transactions]]
-- [[W05 - Smart Contract Standard]]
-- [[W07 - Smart Contract Pitfalls]]
+- [[W04 - Wallets and Transactions]]
+- [[W06 - Smart Contract Standard]]
+- [[W08 - Smart Contract Pitfalls]]
 - [[Blockchain - Review dan Glosari]]

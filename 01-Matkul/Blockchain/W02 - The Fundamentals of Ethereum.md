@@ -111,7 +111,7 @@ Konkretnya, di DAO:
 Kenapa perlu DAO? Karena memulai organisasi yang melibatkan dana dan uang butuh kepercayaan besar pada orang-orang yang kamu ajak kerja. Padahal susah percaya sama orang yang cuma pernah kamu temui lewat internet. Dengan DAO, **kamu gak perlu percaya siapa pun di kelompok itu — cukup percaya pada kode DAO-nya**, yang 100% transparan dan bisa diverifikasi siapa saja.
 
 > [!info] Konteks tambahan (bukan dari slide)
-> Perhatikan ironi yang belum dibahas di slide ini: hard fork **DAO** di tabel di atas itu justru terjadi karena sebuah DAO **kena hack**. Jadi premis "cukup percaya pada kodenya" itu benar hanya sejauh kodenya benar. Ini yang jadi bahan [[W07 - Smart Contract Pitfalls]] dan [[W08 - Smart Contract Auditing]] nanti.
+> Perhatikan ironi yang belum dibahas di slide ini: hard fork **DAO** di tabel di atas itu justru terjadi karena sebuah DAO **kena hack**. Jadi premis "cukup percaya pada kodenya" itu benar hanya sejauh kodenya benar. Ini yang jadi bahan [[W08 - Smart Contract Pitfalls]] dan [[W09 - Smart Contract Auditing]] nanti.
 
 ### Kenapa belajar Ethereum
 Blockchain punya kurva belajar yang curam, karena menggabungkan banyak disiplin sekaligus: programming, information security, kriptografi, ekonomi, sistem terdistribusi, jaringan peer-to-peer, dan lainnya. Ethereum bikin kurva itu jauh lebih landai, jadi bisa mulai cepat — tapi tepat di bawah permukaan lingkungan yang kelihatan sederhana itu ada banyak lapisan kompleksitas.
@@ -132,7 +132,7 @@ Tapi slide menutup dengan peringatan yang penting banget:
 - Slide ditulis saat Ethereum masih PoW dan Casper masih "rencana". **The Merge sudah terjadi September 2022** dan Ethereum sekarang full PoS — perlu dikonfirmasi ke dosen apakah yang diujikan versi slide (PoW/Ethash) atau kondisi terkini.
 - Tahap **Serenity** disebut sebagai tahap keempat tapi gak pernah dijelaskan isinya. Kemungkinan besar itu yang sekarang dikenal sebagai Eth2/PoS.
 - Merkle Patricia Tree cuma disebut nama, gak dijelaskan struktur atau kenapa dipilih. Kalau keluar di ujian, kemungkinan cuma level definisi.
-- Rinkeby, Ropsten, dan testnet lain baru muncul di [[W06 - The Hardhat Framework]]; di sini belum dibahas ada berapa jaringan Ethereum.
+- Rinkeby, Ropsten, dan testnet lain baru muncul di [[W07 - The Hardhat Framework]]; di sini belum dibahas ada berapa jaringan Ethereum.
 
 ## Versi Gue
 <!-- JANGAN DISENTUH. Section ini diisi manual oleh pemilik vault. -->
@@ -140,5 +140,5 @@ Tapi slide menutup dengan peringatan yang penting banget:
 ## Terkait
 - [[_Blockchain]]
 - [[W01 - Introduction to Blockchain Technology]]
-- [[W03 - Wallets and Transactions]]
+- [[W04 - Wallets and Transactions]]
 - [[Blockchain - Review dan Glosari]]

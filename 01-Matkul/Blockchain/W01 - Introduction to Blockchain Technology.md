@@ -136,7 +136,7 @@ Slide 13 nyuruh main-main dengan demo blockchain interaktif untuk membayangkan c
 - Slide nyebut "currently two acceptable mechanisms" (PoW dan PoS), padahal ada PoA, DPoS, dll. Apakah dosen membatasi scope ke dua ini aja buat ujian?
 - Contoh target "21 / 33 / 17" itu disederhanakan banget. Gimana angka target sebenarnya ditentukan dan di-adjust jaringan (difficulty adjustment)? Slide gak bahas.
 - Trilemma disebut tapi gak dikasih contoh konkret chain mana yang mengorbankan apa. Berpotensi jadi soal analisis.
-- Asymmetric-key algorithm disebut sebagai salah satu dari dua jenis kriptografi, tapi cuma hash function yang dijelaskan detail. Digital signature baru kebahas di [[W03 - Wallets and Transactions]].
+- Asymmetric-key algorithm disebut sebagai salah satu dari dua jenis kriptografi, tapi cuma hash function yang dijelaskan detail. Digital signature baru kebahas di [[W04 - Wallets and Transactions]].
 
 ## Versi Gue
 <!-- JANGAN DISENTUH. Section ini diisi manual oleh pemilik vault. -->

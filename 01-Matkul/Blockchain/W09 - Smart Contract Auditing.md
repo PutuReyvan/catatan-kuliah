@@ -1,14 +1,14 @@
 ---
 matkul: Blockchain
-minggu: 8
+minggu: 9
 sks: 2
 sumber: Smart Contract Auditing.pptx
-tags: [kuliah/blockchain, minggu/w08]
+tags: [kuliah/blockchain, minggu/w09]
 status: draft
 diproses: 2026-09-03
 ---
 
-# W08 — Smart Contract Auditing
+# W09 — Smart Contract Auditing
 
 > [!note] Slide 2 nyatakan deck ini dibawakan dalam **dua sesi terpisah (S11 dan S12)**.
 
@@ -55,7 +55,7 @@ Tujuan audit adalah menilai kode proyek (beserta spesifikasi dan dokumentasi ter
 **Biayanya:** tergantung tipe/scope audit, tapi umumnya **mulai dari USD $10.000 per minggu**, tergantung kompleksitas proyek, permintaan/penawaran pasar untuk audit, dan kekuatan/reputasi firma auditornya.
 
 > [!info] Konteks tambahan (bukan dari slide)
-> Angka $10K/minggu itu bukan detail sepele — dia menjelaskan **kenapa profesi ini ada**. Kalau contract-mu memegang $50 juta dan bug satu baris bisa menguapkannya permanen tanpa bisa dipulihkan (lihat [[W07 - Smart Contract Pitfalls]]), audit $40 ribu itu **murah**. Ekonomi inilah yang bikin smart contract auditing jadi jalur karier tersendiri, dan itu yang lagi kamu pelajari di dua sesi ini.
+> Angka $10K/minggu itu bukan detail sepele — dia menjelaskan **kenapa profesi ini ada**. Kalau contract-mu memegang $50 juta dan bug satu baris bisa menguapkannya permanen tanpa bisa dipulihkan (lihat [[W08 - Smart Contract Pitfalls]]), audit $40 ribu itu **murah**. Ekonomi inilah yang bikin smart contract auditing jadi jalur karier tersendiri, dan itu yang lagi kamu pelajari di dua sesi ini.
 
 ### Klasifikasi temuan audit
 Kerentanan yang ditemukan saat audit biasanya diklasifikasikan ke dalam kategori berbeda, yang membantu memahami **sifat kerentanannya, dampak/severity potensialnya, komponen/fungsionalitas proyek yang terdampak, dan skenario eksploitasinya**.
@@ -160,18 +160,18 @@ Dua tool fuzzing smart contract yang populer: **Echidna** dan **Harvey**.
 
 ## Diagram & Visual
 - **Slide 12 — pengenalan Slither**
-  ![[99-Assets/Blockchain/W08-slide12.png]]
+  ![[99-Assets/Blockchain/W09-slide12.png]]
 - **Slide 14 — kode contract `FibonacciLib` dan `FibonacciBalance` untuk hands-on Slither**
-  ![[99-Assets/Blockchain/W08-slide14.png]]
-  ![[99-Assets/Blockchain/W08-slide14b.png]]
+  ![[99-Assets/Blockchain/W09-slide14.png]]
+  ![[99-Assets/Blockchain/W09-slide14b.png]]
 - **Slide 15 — pengenalan Mythril**
-  ![[99-Assets/Blockchain/W08-slide15.png]]
+  ![[99-Assets/Blockchain/W09-slide15.png]]
 - **Slide 18 — tampilan repositori Echidna di GitHub**
-  ![[99-Assets/Blockchain/W08-slide18.png]]
+  ![[99-Assets/Blockchain/W09-slide18.png]]
 - **Slide 19 — kode contract `Incrementor` untuk hands-on Echidna**
-  ![[99-Assets/Blockchain/W08-slide19.png]]
+  ![[99-Assets/Blockchain/W09-slide19.png]]
 - **Slide 20 — tampilan Damn Vulnerable DeFi (CTF showdown)**
-  ![[99-Assets/Blockchain/W08-slide20.png]]
+  ![[99-Assets/Blockchain/W09-slide20.png]]
 
 > [!warning] **Slide 8 (Severity Matrix) tidak berhasil diekstrak, baik sebagai teks maupun gambar.** Padahal itu matriks Likelihood × Impact = Severity, yang kemungkinan besar keluar di ujian. **Buka PPT aslinya di slide 8.** Kode `FibonacciLib`, `FibonacciBalance`, dan `Incrementor` juga berupa gambar, gak bisa di-copy dari note ini.
 
@@ -195,7 +195,7 @@ Dua tool fuzzing smart contract yang populer: **Echidna** dan **Harvey**.
 
 ## Terkait
 - [[_Blockchain]]
-- [[W07 - Smart Contract Pitfalls]]
-- [[W09 - Audit Findings]]
-- [[W05 - Smart Contract Standard]]
+- [[W08 - Smart Contract Pitfalls]]
+- [[W10 - Audit Findings]]
+- [[W06 - Smart Contract Standard]]
 - [[Blockchain - Review dan Glosari]]

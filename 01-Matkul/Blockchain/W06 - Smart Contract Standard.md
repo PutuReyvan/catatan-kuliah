@@ -1,14 +1,14 @@
 ---
 matkul: Blockchain
-minggu: 5
+minggu: 6
 sks: 2
 sumber: Smart Contract Standard.pptx
-tags: [kuliah/blockchain, minggu/w05]
+tags: [kuliah/blockchain, minggu/w06]
 status: draft
 diproses: 2026-09-03
 ---
 
-# W05 — Smart Contract Standard
+# W06 — Smart Contract Standard
 
 ## Ringkasan
 > - Standar di Ethereum namanya **ERC** (Ethereum Request for Comment). Sekarang ada lebih dari 50 ERC beredar.
@@ -116,20 +116,20 @@ Slide menampilkan temuan audit nyata yang berhubungan dengan standar:
 Sumbernya: `https://code4rena.com/reports/2021-08-notional#h-03-compoundtonotionalv2notionalcallback-erc20-return-values-not-checked`
 
 > [!info] Konteks tambahan (bukan dari slide)
-> Kenapa ini jadi temuan **High**: fungsi `transfer` di ERC-20 mengembalikan `bool`. Sebagian token mengembalikan `false` ketika transfer gagal, alih-alih membatalkan transaksi. Kalau kodemu gak mengecek nilai kembaliannya, kodemu akan lanjut jalan **seolah-olah transfer berhasil**, padahal uangnya gak pindah. Ini sambung langsung ke **unchecked external calls** di [[W07 - Smart Contract Pitfalls]].
+> Kenapa ini jadi temuan **High**: fungsi `transfer` di ERC-20 mengembalikan `bool`. Sebagian token mengembalikan `false` ketika transfer gagal, alih-alih membatalkan transaksi. Kalau kodemu gak mengecek nilai kembaliannya, kodemu akan lanjut jalan **seolah-olah transfer berhasil**, padahal uangnya gak pindah. Ini sambung langsung ke **unchecked external calls** di [[W08 - Smart Contract Pitfalls]].
 
 ### Testimoni
 Slide 13 menampilkan testimoni dari **Richard Tan, angkatan B25, jurusan cybersecurity**, yang terlibat di beberapa proyek blockchain auditing sejak 2023, dari masa-masa awalnya.
 
 ## Diagram & Visual
 - **Slide 4 — ilustrasi cara kerja token ERC-20**
-  ![[99-Assets/Blockchain/W05-slide04.jpg]]
+  ![[99-Assets/Blockchain/W06-slide04.jpg]]
 - **Slide 10 — tabel rangkuman perbandingan standar token Ethereum**
-  ![[99-Assets/Blockchain/W05-slide10.jpg]]
+  ![[99-Assets/Blockchain/W06-slide10.jpg]]
 - **Slide 12 — cuplikan laporan audit Notional (code4rena) terkait return value ERC-20**
-  ![[99-Assets/Blockchain/W05-slide12.png]]
+  ![[99-Assets/Blockchain/W06-slide12.png]]
 - **Slide 13 — testimoni Richard Tan soal pengalaman auditing**
-  ![[99-Assets/Blockchain/W05-slide13.png]]
+  ![[99-Assets/Blockchain/W06-slide13.png]]
 
 > [!warning] Slide 4, 10, 12, dan 13 di PPT aslinya cuma judul + gambar. Terutama **slide 10 (tabel rangkuman perbandingan standar)** — itu kemungkinan besar tabel yang paling berguna buat belajar dan isinya gak bisa diekstrak jadi teks. Buka gambarnya.
 
@@ -148,7 +148,7 @@ Slide 14 — implementasikan token yang ERC-20 compliant, panduan di:
 
 ## Terkait
 - [[_Blockchain]]
-- [[W04 - Solidity Development]]
-- [[W06 - The Hardhat Framework]]
-- [[W07 - Smart Contract Pitfalls]]
+- [[W05 - Solidity Development]]
+- [[W07 - The Hardhat Framework]]
+- [[W08 - Smart Contract Pitfalls]]
 - [[Blockchain - Review dan Glosari]]

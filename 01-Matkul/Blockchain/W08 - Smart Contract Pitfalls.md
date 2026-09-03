@@ -1,14 +1,14 @@
 ---
 matkul: Blockchain
-minggu: 7
+minggu: 8
 sks: 2
 sumber: Smart Contract Pitfalls.pptx
-tags: [kuliah/blockchain, minggu/w07]
+tags: [kuliah/blockchain, minggu/w08]
 status: draft
 diproses: 2026-09-03
 ---
 
-# W07 — Smart Contract Pitfalls
+# W08 — Smart Contract Pitfalls
 
 > [!note] Slide 2 nyatakan deck ini dibawakan dalam **dua sesi terpisah (S09 dan S10)**. Ini deck terpanjang di matkul ini (36 slide) dan isinya paling padat untuk ujian.
 
@@ -162,7 +162,7 @@ Yang dilakukan hacker, berurutan:
 Ini bisa dicegah kalau fungsi `burn()` punya access control seperti **`onlyOwner`**, atau kalau fungsinya dibuat **`internal`** dengan logika access control yang benar.
 
 > [!info] Konteks tambahan (bukan dari slide)
-> Perhatikan pola yang muncul dua kali di matkul ini: **Parity `initWallet`** ([[W06 - The Hardhat Framework]]) dan **HospoWise `burn()`**. Dua-duanya bug yang sama persis bentuknya — **fungsi kritis yang lupa dikasih modifier**. Bukan bug matematika yang rumit, bukan eksploitasi kriptografi. Cuma satu kata yang lupa ditulis. Ini yang bikin access control jadi kategori temuan audit yang paling sering muncul.
+> Perhatikan pola yang muncul dua kali di matkul ini: **Parity `initWallet`** ([[W07 - The Hardhat Framework]]) dan **HospoWise `burn()`**. Dua-duanya bug yang sama persis bentuknya — **fungsi kritis yang lupa dikasih modifier**. Bukan bug matematika yang rumit, bukan eksploitasi kriptografi. Cuma satu kata yang lupa ditulis. Ini yang bikin access control jadi kategori temuan audit yang paling sering muncul.
 
 ---
 
@@ -189,13 +189,13 @@ Ide utama kerentanan jenis ini: **nilai kembalian dari message call tidak dicek*
 
 ## Diagram & Visual
 - **Slide 14 — kode `EtherStore.sol` (target hands-on reentrancy)**
-  ![[99-Assets/Blockchain/W07-slide14.png]]
+  ![[99-Assets/Blockchain/W08-slide14.png]]
 - **Slide 20 — kode `TimeLock.sol` (target hands-on arithmetic overflow)**
-  ![[99-Assets/Blockchain/W07-slide20.png]]
+  ![[99-Assets/Blockchain/W08-slide20.png]]
 - **Slide 24 — kode `BadRandomContract.sol` (target hands-on insecure randomness)**
-  ![[99-Assets/Blockchain/W07-slide24.png]]
+  ![[99-Assets/Blockchain/W08-slide24.png]]
 - **Slide 32 — kode contract `Lotto` (contoh unchecked external call)**
-  ![[99-Assets/Blockchain/W07-slide32.png]]
+  ![[99-Assets/Blockchain/W08-slide32.png]]
 
 > [!warning] **Keempat contract yang jadi bahan latihan ada dalam bentuk gambar, bukan teks.** `EtherStore.sol`, `TimeLock.sol`, `BadRandomContract.sol`, dan `Lotto` gak bisa di-copy dari note ini — harus diketik ulang dari gambar di atas atau dari PPT aslinya. Kode contract HospoWise di slide 30 juga tidak terekstrak.
 
@@ -223,10 +223,10 @@ uint(blockhash(block.number - 1))   // bisa dihitung sendiri oleh penyerang
 3. **Insecure randomness** (slide 26) — buat fungsi `attack()` yang memprediksi angka acak `BadRandomContract` dengan meniru logika generatornya.
 
 ## Pertanyaan Terbuka
-- **Fallback function** adalah inti mekanisme reentrancy, tapi gak pernah dijelaskan di deck mana pun di matkul ini. [[W04 - Solidity Development]] cuma menyebutnya sambil lalu dengan catatan "see previous session". Ini lubang materi yang paling menonjol.
-- Sejak **Solidity 0.8.0**, over/underflow **otomatis revert** tanpa perlu SafeMath. Slide masih mengajarkan SafeMath sebagai mitigasi utama. Perlu ditanya apakah yang diujikan versi pra-0.8 atau kondisi terkini — sementara [[W06 - The Hardhat Framework]] sendiri memakai compiler 0.8.8.
+- **Fallback function** adalah inti mekanisme reentrancy. Penjelasannya ada di [[W03 - Ethereum Basics]] slide 20–21 (`receive()` vs `fallback()`, plus modifier `payable`) — baca itu dulu kalau mekanisme serangan ini terasa gak nyambung. Deck W08 sendiri gak mengulang penjelasannya.
+- Sejak **Solidity 0.8.0**, over/underflow **otomatis revert** tanpa perlu SafeMath. Slide masih mengajarkan SafeMath sebagai mitigasi utama. Perlu ditanya apakah yang diujikan versi pra-0.8 atau kondisi terkini — sementara [[W07 - The Hardhat Framework]] sendiri memakai compiler 0.8.8.
 - Ada **ketidakcocokan angka di slide 17**: "menambahkan 256 ke `uint8` akan membiarkan variabelnya tidak berubah" itu benar (256 mod 256 = 0), tapi kalimat di slide 18 "menambahkan 257 ke `uint8` bernilai 0 menghasilkan 1" juga benar. Keduanya konsisten, tapi penyajiannya membingungkan kalau dibaca cepat. Pastikan paham aritmetika modulonya, bukan hafal angkanya.
-- `delegatecall` disebut lagi di sini sebagai metode call level rendah, dan **lagi-lagi gak dijelaskan**. Ini kali ketiga dia muncul tanpa penjelasan (setelah library dan raw call di [[W04 - Solidity Development]], dan proxy Parity di [[W06 - The Hardhat Framework]]).
+- `delegatecall` disebut lagi di sini sebagai metode call level rendah, dan **lagi-lagi gak dijelaskan**. Ini kali ketiga dia muncul tanpa penjelasan (setelah library dan raw call di [[W05 - Solidity Development]], dan proxy Parity di [[W07 - The Hardhat Framework]]).
 - Slide menyebut 5 risiko, sementara OWASP Smart Contract Top 10 (yang dijadikan referensi di slide 36) punya 10. Perlu ditanya apakah yang di luar 5 ini masuk ujian.
 - Studi kasus HospoWise gak dikasih tanggal atau angka kerugiannya.
 
@@ -235,8 +235,8 @@ uint(blockhash(block.number - 1))   // bisa dihitung sendiri oleh penyerang
 
 ## Terkait
 - [[_Blockchain]]
-- [[W06 - The Hardhat Framework]]
-- [[W08 - Smart Contract Auditing]]
-- [[W04 - Solidity Development]]
-- [[W03 - Wallets and Transactions]]
+- [[W07 - The Hardhat Framework]]
+- [[W09 - Smart Contract Auditing]]
+- [[W05 - Solidity Development]]
+- [[W04 - Wallets and Transactions]]
 - [[Blockchain - Review dan Glosari]]

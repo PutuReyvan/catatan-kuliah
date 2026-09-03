@@ -1,14 +1,14 @@
 ---
 matkul: Blockchain
-minggu: 3
+minggu: 4
 sks: 2
 sumber: Wallets and Transactions.pptx
-tags: [kuliah/blockchain, minggu/w03]
+tags: [kuliah/blockchain, minggu/w04]
 status: draft
 diproses: 2026-09-03
 ---
 
-# W03 — Wallets and Transactions
+# W04 — Wallets and Transactions
 
 ## Ringkasan
 > - **Salah kaprah terbesar: wallet TIDAK menyimpan ether.** Wallet cuma nyimpen *kunci*, kayak gantungan kunci. Ether-nya ada di blockchain.
@@ -182,24 +182,24 @@ Ini bagian yang paling sering keluar di soal, dan paling sering ketuker.
 > - `tx.origin` = **kamu**, dari sudut pandang siapa pun di rantai itu. Gak berubah.
 > - `msg.sender` dari sudut pandang bos = **resepsionis**, bukan kamu.
 >
-> Ini juga alasan kenapa pakai `tx.origin` buat access control itu berbahaya: kalau kamu ketipu ngirim transaksi ke contract jahat, contract jahat itu bisa memanggil contract-mu, dan `tx.origin` di sana **tetap alamatmu** — jadi cek "hanya pemilik" lolos padahal yang nyuruh bukan kamu. Cek yang benar pakai `msg.sender`. Konsep ini balik lagi di [[W07 - Smart Contract Pitfalls]].
+> Ini juga alasan kenapa pakai `tx.origin` buat access control itu berbahaya: kalau kamu ketipu ngirim transaksi ke contract jahat, contract jahat itu bisa memanggil contract-mu, dan `tx.origin` di sana **tetap alamatmu** — jadi cek "hanya pemilik" lolos padahal yang nyuruh bukan kamu. Cek yang benar pakai `msg.sender`. Konsep ini balik lagi di [[W08 - Smart Contract Pitfalls]].
 
 ## Diagram & Visual
 - **Slide 6 — struktur pohon HD wallet (parent → child → grandchild key)**
-  ![[99-Assets/Blockchain/W03-slide06.png]]
+  ![[99-Assets/Blockchain/W04-slide06.png]]
 - **Slide 10 — alur BIP-39: entropy → checksum → potongan 11 bit → kata**
-  ![[99-Assets/Blockchain/W03-slide10.png]]
+  ![[99-Assets/Blockchain/W04-slide10.png]]
 - **Slide 12 — alur mnemonic + salt → PBKDF2 → seed 512-bit**
-  ![[99-Assets/Blockchain/W03-slide12.png]]
+  ![[99-Assets/Blockchain/W04-slide12.png]]
 - **Slide 13 — tampilan Mnemonic Code Converter (iancoleman.io/bip39)**
-  ![[99-Assets/Blockchain/W03-slide13.png]]
+  ![[99-Assets/Blockchain/W04-slide13.png]]
 - **Slide 15 — struktur transaksi Ethereum**
-  ![[99-Assets/Blockchain/W03-slide15.png]]
+  ![[99-Assets/Blockchain/W04-slide15.png]]
 - **Slide 22 — ilustrasi kombinasi value dan data pada transaksi**
-  ![[99-Assets/Blockchain/W03-slide22.png]]
+  ![[99-Assets/Blockchain/W04-slide22.png]]
 - **Slide 26 — kode EntryContract.sol dan UnderlyingContract.sol untuk demo tx.origin vs msg.sender**
-  ![[99-Assets/Blockchain/W03-slide26.png]]
-  ![[99-Assets/Blockchain/W03-slide26b.png]]
+  ![[99-Assets/Blockchain/W04-slide26.png]]
+  ![[99-Assets/Blockchain/W04-slide26b.png]]
 
 > [!warning] Slide 6, 10, dan 12 di PPT aslinya cuma judul + diagram tanpa teks. Penjelasan di note ini diambil dari slide teks di sekitarnya. Kode di slide 26 juga berupa gambar, bukan teks — gak bisa di-copy dari note ini, buka gambarnya.
 
@@ -234,7 +234,7 @@ wolf juice proud gown wool unfair wall cliff insect more detail hub
 - Slide 8 punya kesalahan cetak: dia bilang "here's a seed in hexadecimal form" tapi yang ditampilkan **kata-kata mnemonic yang sama persis** dengan bentuk 12-mnemonic di bawahnya. Bentuk hex aslinya gak pernah ditampilkan.
 - BIP-44 disebut di judul slide tapi **isinya gak pernah dijelaskan** — cuma BIP-32 dan BIP-39 yang dibahas. Padahal BIP-44 itu yang mendefinisikan struktur path `m/44'/60'/0'/0`.
 - Digital signature (v, r, s / ECDSA) cuma disebut sebagai field, gak dijelaskan cara kerjanya. Ini "asymmetric-key algorithm" yang digantung dari [[W01 - Introduction to Blockchain Technology]] dan sampai sini belum kebayar juga.
-- Konsekuensi keamanan `tx.origin` (phishing lewat contract perantara) belum dibahas di sini — kemungkinan besar muncul di [[W07 - Smart Contract Pitfalls]].
+- Konsekuensi keamanan `tx.origin` (phishing lewat contract perantara) belum dibahas di sini — kemungkinan besar muncul di [[W08 - Smart Contract Pitfalls]].
 
 ## Versi Gue
 <!-- JANGAN DISENTUH. Section ini diisi manual oleh pemilik vault. -->
@@ -242,5 +242,5 @@ wolf juice proud gown wool unfair wall cliff insect more detail hub
 ## Terkait
 - [[_Blockchain]]
 - [[W02 - The Fundamentals of Ethereum]]
-- [[W04 - Solidity Development]]
+- [[W05 - Solidity Development]]
 - [[Blockchain - Review dan Glosari]]
